@@ -8,10 +8,10 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-white dark:text-white">
-              Unleash the power of <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                ZEEK
+            <h1 className="font-mono text-4xl font-semibold text-white dark:text-white">
+              Unveil the <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none font-mono">
+                Fibonacci Bloom
               </span>
             </h1>
           </>

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useAddress, useContract, useOwnedNFTs } from '@thirdweb-dev/react';
+import { ConnectWallet, MediaRenderer, darkTheme, useAddress, useContract, useOwnedNFTs } from '@thirdweb-dev/react';
 import NFTCard from "../NFTCard";
 
 export const ContainerScroll = ({ titleComponent }) => {
@@ -27,7 +27,7 @@ export const ContainerScroll = ({ titleComponent }) => {
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   const address = useAddress();
-  const editionDropContract = "0xEE48b8AF0fF6C05Ffdacf3a2225848c5e3FcbbFB";
+  const editionDropContract = "0x1d0E7d5bE3Fea1Ddff7ddb7baECC55Cc05450B78"
   const { contract } = useContract(editionDropContract, "edition-drop");
   const { data: nfts, isLoading } = useOwnedNFTs(contract, address);
 
@@ -47,6 +47,13 @@ export const Header = ({ translate, titleComponent }) => (
   </motion.div>
 );
 
+const customTheme = darkTheme({
+  fontFamily: "Futura",
+  colors: {
+    separatorLine: "none",
+    borderColor:""
+  }
+})
 export const Card = ({ rotate, scale, translate, isLoading, nfts }) => (
   <motion.div
     style={{
@@ -56,19 +63,32 @@ export const Card = ({ rotate, scale, translate, isLoading, nfts }) => (
     }}
     className="max-w-5xl -mt-1 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl flex justify-center items-center"
   >
-    <div className="bg-gray-100 h-full w-full rounded-2xl flex flex-col items-center justify-center p-4">
+    <div className="bg-customBackground h-full w-full rounded-2xl flex flex-col items-center justify-center p-4">
       {isLoading ? (
-        <div className="text-center text-gray-500">Loading your NFTs...</div>
+        <div className="text-center flex flex-col text-gray-500">
+          <ConnectWallet
+            theme={customTheme}
+            className="connectButton"
+            modalTitle="Fibonacci Bloom"
+            modalTitleIconUrl=""
+            welcomeScreen={() => (
+              <div style={{ height: "100%", width: "100%" }}>
+                <MediaRenderer src="/flowers.jpg" height="100%" width="auto" />
+              </div>
+            )}
+          />
+        </div>
       ) : nfts && nfts.length > 0 ? (
         nfts.map((nft, idx) => (
           <NFTCard key={idx} nft={nft} style={{ translateY: translate }} />
         ))
       ) : (
         <div className="text-center text-black">
-          <h1 className="text-xl font-bold mb-2">You don&apos;t have any NFTs yet!</h1>
+          <h1 className="text-xl font-bold mb-2">You don't have any NFTs yet!</h1>
           <p>Mint your first NFT now and start your collection.</p>
         </div>
       )}
     </div>
   </motion.div>
 );
+

@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+
+body{
+  font-family: "Workbench", sans-serif;
+  background-color: black;
+  font-family: monospace;
+}
 .my-custom-class {
   background-color: transparent !important;
   color: black !important;
+}
+
+.bg-customBackground {
+  background: rgb(206,226,38);
+  background: radial-gradient(circle, rgba(206,226,38,1) 0%, rgba(69,92,28,1) 100%);
+}
+
+.connectButton{
+  background: rgb(225,243,74) !important;
+  background: radial-gradient(circle, rgba(225,243,74,1) 0%, rgba(69,92,28,1) 100%) !important;
+
+}
+
+@media (max-width: 640px) {
+  .nft-images-container {
+    margin-top: -150px;
+    gap: 25px;
+    flex-direction: column; /* Smaller gap on smaller screens */
+  }
+  .stagger-box {
+    width: 150px; 
+    height: 150px;  
+  }
 }

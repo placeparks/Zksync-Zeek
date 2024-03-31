@@ -11,14 +11,20 @@
     "deploy": "next build && next export && npx thirdweb@latest upload out"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.0",
     "@thirdweb-dev/react": "^4",
     "@thirdweb-dev/sdk": "^4",
+    "@tsparticles/engine": "^3.3.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.3.0",
     "clsx": "^2.1.0",
     "ethers": "^5",
     "framer-motion": "^11.0.13",
+    "gsap": "^3.12.5",
     "next": "^13",
     "react": "^18.2",
     "react-dom": "^18.2",
+    "react-lottie-loader": "^1.1.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
