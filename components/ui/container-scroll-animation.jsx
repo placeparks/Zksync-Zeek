@@ -84,7 +84,7 @@ export const Card = ({ rotate, scale, translate, isLoading, nfts }) => (
         ))
       ) : (
         <div className="text-center text-black">
-          <h1 className="text-xl font-bold mb-2">You don't have any NFTs yet!</h1>
+          <h1 className="text-xl font-bold mb-2">You don&apos;t have any NFTs yet!</h1>
           <p>Mint your first NFT now and start your collection.</p>
         </div>
       )}

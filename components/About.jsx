@@ -16,7 +16,7 @@ const About1 = () => {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="mt-12 lg:mt-0">
             <h4 className="font-mono mt-0 mb-16 text-2xl font-bold tracking-tight md:text-3xl xl:text-3xl text-[hsl(218,81%,95%)]">
-            Welcome to the realm of Fibonacci Bloom, where art, mathematics, and the digital frontier converge. Here, each NFT is more than a masterpiece — it's an entry into a clandestine tapestry of experiences. Own a piece of Cipher Sun, and align with the visionaries unlocking the next dimension of engagement. Your journey through the spirals of innovation begins now- <br /><span className="text-[hsl(200,81%,75%)]">embrace the Bloom</span>
+            Welcome to the realm of Fibonacci Bloom, where art, mathematics, and the digital frontier converge. Here, each NFT is more than a masterpiece — it&apos;s an entry into a clandestine tapestry of experiences. Own a piece of Cipher Sun, and align with the visionaries unlocking the next dimension of engagement. Your journey through the spirals of innovation begins now- <br /><span className="text-[hsl(200,81%,75%)]">embrace the Bloom</span>
             </h4>
         
           </div>
